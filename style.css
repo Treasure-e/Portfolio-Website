@@ -1,0 +1,487 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background: #081b29;
+  color: #ededed;
+}
+
+/* Header/Navigation */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding: 20px 10%;
+  background: transparent;
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 25px;
+  color: #ededed;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.navbar a {
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 400;
+  color: #ededed;
+  margin-left: 35px;
+  transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: #00abf0;
+}
+
+/* Home/Hero Section */
+.home {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  padding: 0 10%;
+}
+
+.home-content {
+  max-width: 600px;
+}
+
+.home-content h1 {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.home-content h3 {
+  background: linear-gradient(45deg, #00abf0, #6a00f4); /* Cyan-to-purple */
+  -webkit-background-clip: text; /* Clip gradient to text */
+  background-clip: text;
+  color: transparent;            /* Hide solid color */
+  font-weight: 900;
+}
+.home-content h3 span {
+  color: #00abf0;       /* Your existing cyan (or replace with #6a00f4 for purple) */
+  font-weight: 900;     /* Bold text */
+  text-shadow: 0 0 10px rgba(0, 171, 240, 0.3); /* Soft glow (optional) */
+}
+
+.home-content p {
+  font-size: 16px;
+  margin: 20px 0 40px;
+}
+
+.home-content .btn-box {
+  width: 345px;
+  height: 50px;
+}
+
+.btn-box a {
+  display: inline-flex;
+  width: 150px;
+  height: 100%;
+  background: #00abf0;
+  border: 2px solid #00abf0;
+  border-radius: 8px;
+  font-size: 19px;
+  color: #081b29;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: .5s;
+}
+
+.btn-box a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #081b29;
+  z-index: -1;
+  transition: .5s;
+}
+
+.btn-box a:hover::before {
+  width: 100%;
+}
+
+.btn-box a:hover {
+  color: #ededed;
+}
+
+.home-sci {
+  position: absolute;
+  bottom: 40px;
+  width: 170px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.home-sci a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid #00abf0;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #00abf0;
+  text-decoration: none;    
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: .5s;
+}
+
+.home-sci a:hover {
+  color: #081b29;
+}
+
+.home-sci a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #00abf0;
+  z-index: -1;
+  transition: .5s;
+}
+
+.home-sci a:hover::before {
+  width: 100%;
+}
+
+/* About Me Section */
+.about {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
+  padding: 100px 10%;
+  background: #081b29;
+}
+
+.about-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.about-content h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: #00abf0;
+}
+
+.about-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ededed;
+}
+
+.about-skills {
+  flex: 1;
+}
+
+.about-skills h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #00abf0;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.skill-item {
+  background: rgba(0, 171, 240, 0.1);
+  color: #ededed;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-align: center;
+  border: 1px solid #00abf0;
+  transition: transform 0.3s, background 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.skill-item:hover {
+  background: rgba(0, 171, 240, 0.2);
+  transform: translateY(-5px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column;
+  }
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Projects Section */
+.projects {
+  padding: 100px 10%;
+  text-align: center;
+  background: rgba(0, 171, 240, 0.05);
+}
+
+.projects h2 {
+  font-size: 2.5rem;
+  color: white; /* Solid white text */
+  position: relative;
+  display: inline-block;
+}
+
+.projects p {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 18px;
+}
+
+/* Contact Form (Non-linear layout) */
+.contact {
+  padding: 100px 10%;
+  background: #081b29;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-info h2 {
+  font-size: 40px;
+  color: #00abf0;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.contact-form {
+  background: rgba(0, 171, 240, 0.1);
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid #00abf0;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #ededed;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  background: transparent;
+  border: 1px solid #00abf0;
+  border-radius: 5px;
+  color: #ededed;
+  font-family: sans-serif;
+}
+
+.form-group textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+.contact-form .btn {
+  width: 100%;
+  padding: 12px;
+  background: #00abf0;
+  color: #081b29;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-form .btn:hover {
+  background: #0088cc;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* === Previous CSS (Header, Home, About, Skills) === */
+
+/* Education Section */
+.education {
+  padding: 100px 10%;
+  text-align: center;
+  background: rgba(0, 18, 51, 0.7);
+}
+
+.education-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.education h2 {
+  font-size: 40px;
+  color: #00abf0;
+  margin-bottom: 20px;
+}
+
+.education p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+/* Interests Section */
+.interests {
+  padding: 100px 10%;
+  background: #081b29;
+  text-align: center;
+}
+
+.interests-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.interests h2 {
+  background: linear-gradient(45deg, #00abf0, #6a00f4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
+
+.interests p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Projects Section */
+.projects {
+  padding: 100px 10%;
+  text-align: center;
+  background: rgba(0, 171, 240, 0.05);
+}
+
+.projects h2 {
+  font-size: 2.5rem;
+  color: white; /* Solid white text */
+  position: relative;
+  display: inline-block;
+}
+
+.projects p {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 18px;
+}
+
+/* Contact Form (Existing CSS) */
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .education-content,
+  .interests-content {
+    padding: 0 20px;
+  }
+}
+
+/* ===== Gradient Section Headings ===== */
+/* Applies to About, Projects, and Contact sections */
+.about-content h2,
+.projects h2,
+.contact-info h2,
+.about-skills h3 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* First word - plain white */
+.about-content h2 span:first-child,
+.projects h2 span:first-child,
+.about-skills h3 span:first-child,
+.contact-info h2 span:first-child {
+  color: #ededed;
+}
+
+/* Second word - gradient effect */
+.about-content h2 span:last-child,
+.projects h2 span:last-child,
+.contact-info h2 span:last-child,
+.about-skills h3 span:last-child,
+.interests h2 span:last-child,
+.education h2 span:last-child {
+  background: linear-gradient(45deg, #00abf0, #6a00f4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
+
+.about-skills h3,
+.interests h2,
+.education h2 {
+  font-size: 40px;
+}
+
+/* Specific adjustment for Projects section */
+.projects h2 {
+  font-size: 2.5rem;
+  justify-content: center;
+}
+
+/* Responsive adjustment */
+@media (max-width: 500px) {
+  .about-content h2,
+  .projects h2,
+  .contact-info h2,
+  .education h2,
+  .interests h2{
+    font-size: 32px;
+    justify-content: center;
+  }
+}
